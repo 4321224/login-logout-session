@@ -9,6 +9,7 @@ import (
 
 func main() {
 	http.HandleFunc("/", controllers.Index)
-	fmt.Println("Server is running on port 8080")
-	http.ListenAndServe(":8080", nil)
+	http.HandleFunc("/login", controllers.Login)
+	fmt.Println("Server is running on port 4000")
+	http.ListenAndServe(":4000", nil)
 }
